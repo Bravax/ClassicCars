@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./pages/Home";
-import Events from "./pages/Events";
-import LegendaryCars from "./pages/LegendaryCars";
-import Renovations from "./pages/Renovations";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
+import Home from "./src/pages/Home";
+import Events from "./src/pages/Events";
+import LegendaryCars from "./src/pages/LegendaryCars";
+import Renovations from "./src/pages/Renovations";
+import About from "./src/pages/About";
+import Contact from "./src/pages/Contact";
 
 const router = createBrowserRouter([
   {
