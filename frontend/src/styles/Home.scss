@@ -13,12 +13,13 @@ a {
 @keyframes garage {
   0% {
     background-image: url("../assets/fordDealership.png");
+    background-size: 70%;
     opacity: 1;
     filter: blur(0);
   }
   50% {
     background-image: url("../assets/fordT.jpg");
-    background-size: 40% auto;
+    background-size: 50% auto;
     opacity: 1;
     filter: blur(0);
   }
@@ -33,9 +34,9 @@ a {
 .garage {
   width: 100vw;
   height: 100vh;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
-  animation: garage 25s ease-in-out infinite;
+  animation: garage 30s ease-in-out infinite;
   transition: opacity 1s ease, filter 1s ease;
   position: absolute;
   z-index: -1;

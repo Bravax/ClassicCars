@@ -1,0 +1,23 @@
+@use './Variable' as*;
+
+* {
+margin: 0;
+box-sizing: 0;
+}
+
+main {
+background-image: url(../assets/motorP180.jpg);
+background-size: cover;
+width: 100vw;
+height: 100vh;
+}
+
+h1 {
+position: absolute;
+background-color: $colorDark;
+color: white;
+top: 20vh;
+left: 18rem;
+width: 40vw;
+margin: auto;
+}

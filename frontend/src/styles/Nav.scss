@@ -6,161 +6,124 @@
   box-sizing: border-box;
 }
 
-.navbar_logo img {
-  position: absolute;
-  top: 1vh;
-  left: 1vw;
-  width: auto;
-  height: 23vh;
-}
-
 .navbar {
   display: flex;
-  flex-wrap: nowrap;
-  width: 100vw;
-  height: 25vh;
-  left: 0;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-between;
-  font-size: medium;
-  overflow-x: hidden;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  background-color: v.$colorDark;
   color: v.$colorLight;
-}
-
-.navbar_links {
-  display: flex;
-  justify-content: space-between;
-  gap: 5rem;
-  align-content: center;
-  margin-left: 4rem;
-}
-
-.navbar_link {
-  padding: 0 0.3rem;
-  font-size: x-large;
-  color: inherit;
-}
-
-.navbar_link:hover {
-  transform: rotate(10deg);
-  transition: transform 0.9s ease;
-  transition: box-shadow 1s ease;
-  border: 5px solid v.$colorBorder;
-  transition: border 0.3s ease;
-  border-radius: 25%;
-  background-color: v.$colorLight;
-  color: v.$colorDark;
-  transition: background-color 1s ease;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-}
-
-.navbar_burger {
-  width: 3.4rem;
-  height: 3.4rem;
-  background: transparent;
-  border: none;
-  color: inherit;
-}
-
-@media screen and (max-width: 767px) {
-  .navbar {
-    background-color: rgb(38, 22, 23);
-    width: 100vw;
-    height: 14vh;
-  }
+  position: relative;
+  width: 100%;
 
   .navbar_logo img {
-    display: flex;
-    align-items: center;
-    left: 1vw;
-    width: auto;
-    height: 13vh;
+    height: clamp(6vh, 9vh, 12vh);
   }
+
   .navbar_links {
+    position: absolute;
+    top: clamp(8vh, 11.5vh, 14vh);
+    height: clamp(50vh, 70vh, 80vh);
+    left: clamp(20vw, 35vw, 40vw);
+    padding-left: clamp(1vw, 2vw, 3vw);
+    width: clamp(60vw, 100vw, 100vw);
+    background-color: v.$colorDark;
     flex-direction: column;
     justify-content: center;
-    align-items: left;
-    position: fixed;
-    right: -100vw;
-    top: 1rem;
-    bottom: 0;
-    height: 70vh;
-    padding: 1rem;
-    visibility: hidden;
-    background-color: rgb(38, 22, 23);
-  }
+    list-style: none;
+    gap: clamp(3vh, 6vh, 8vh);
+    font-size: clamp(1rem, 5vw, 2rem);
+    transition: all 0.3s ease-in-out;
+    display: none;
 
-  .navbar_link {
-    width: 8rem;
-  }
-  .navbar_link:hover {
-    transform: rotate(10deg);
-    transition: transform 0.9s ease;
-    transition: box-shadow 1s ease;
-    border: 2px solid v.$colorBorder;
-    transition: border 0.3s ease;
-    border-radius: 25%;
-    background-color: v.$colorLight;
-    background-color: v.$colorDark;
-    transition: background-color 1s ease;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-  }
-  .show-nav .navbar_links {
-    width: 100vw;
-    right: 0;
-    visibility: visible;
-    gap: 0.5rem;
-  }
+    &.show {
+      display: flex;
+    }
 
-  .navbar_link {
-    display: block;
-    padding: 1.5rem;
-    font-size: 5vw;
+    &.hide {
+      display: none;
+    }
   }
 
   .navbar_burger {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-right: 1rem;
-  }
-  .burger-bar {
-    display: block;
-    width: 2.5rem;
-    height: 0.3em;
-    background-color: rgb(255, 254, 218);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    width: clamp(6vw, 10vw, 12vw);
+    height: clamp(4vh, 6vh, 7vh);
     position: relative;
-    border-radius: 3px;
-    transition: all 0.5s ease-in-out;
+
+    .burger-bar {
+      position: absolute;
+      width: clamp(5vw, 8vw, 10vw);
+      height: clamp(0.3vh, 0.5vh, 0.7vh);
+      background-color: v.$colorLight;
+      border-radius: 0.6rem;
+      transition:
+        transform 0.3s ease-in-out,
+        opacity 0.2s ease-in-out;
+    }
+
+    .burger-bar:nth-child(1) {
+      top: clamp(0.8vh, 1.4vh, 1.5vh);
+    }
+
+    .burger-bar:nth-child(2) {
+      top: clamp(2vh, 2.8vh, 4vh);
+    }
+
+    .burger-bar:nth-child(3) {
+      top: clamp(2vh, 4vh, 6vh);
+    }
+
+    &.open {
+      .burger-bar:nth-child(1) {
+        top: clamp(2vh, 3vh, 4vh);
+        transform: rotate(45deg);
+      }
+
+      .burger-bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      .burger-bar:nth-child(3) {
+        top: clamp(2vh, 3vh, 4vh);
+        transform: rotate(-45deg);
+      }
+    }
   }
-  .burger-bar::before,
-  .burger-bar::after {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 0.3em;
-    background-color: rgb(255, 254, 218);
-    border-radius: 3px;
-    position: absolute;
-    left: 0;
-    transition: all 0.5s ease-in-out;
-  }
-}
-.burger-bar::before {
-  transform: translateY(-12px);
-}
-.burger-bar::after {
-  transform: translateY(12px);
 }
 
-.show-nav .burger-bar {
-  width: 0;
-  background: transparent;
+// Styles spécifiques pour tablette
+.navbar.tablet {
+  .navbar_links {
+    left: clamp(15vw, 25vw, 30vw);
+    width: clamp(40vw, 50vw, 60vw);
+    font-size: clamp(2rem, 4vw, 3rem);
+    gap: clamp(2vh, 4vh, 5vh);
+  }
+
+  .navbar_burger {
+    width: clamp(5vw, 8vw, 9vw);
+    height: clamp(3vh, 5vh, 6vh);
+  }
 }
-.show-nav .burger-bar::before {
-  transform: rotate(45deg);
-}
-.show-nav .burger-bar::after {
-  transform: rotate(-45deg);
+
+// Styles spécifiques pour ordinateur
+.navbar.desktop {
+  .navbar_links {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    gap: clamp(1vw, 2vw, 3vw);
+  }
+
+  .navbar_burger {
+    display: none;
+  }
 }

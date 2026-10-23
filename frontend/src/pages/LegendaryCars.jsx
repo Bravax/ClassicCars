@@ -1,8 +1,15 @@
-import React from 'react';
 import '../styles/LegendaryCars.scss';
+import Nav from "../components/Nav";
 
 function LegendaryCars() {
-  return <h1>Les voitures de légendes</h1>;
+  return (
+<main>
+  <header>
+<Nav />
+  <h1>Les voitures de légendes</h1>;
+</header> 
+  </main>
+  );
 }
 
 export default LegendaryCars;

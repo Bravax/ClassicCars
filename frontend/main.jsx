@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./src/pages/Home";
 import Events from "./src/pages/Events";
 import LegendaryCars from "./src/pages/LegendaryCars";
-import Renovations from "./src/pages/Renovations";
+import Restorations from "./src/pages/Restorations";
 import About from "./src/pages/About";
 import Contact from "./src/pages/Contact";
 
@@ -22,8 +22,8 @@ const router = createBrowserRouter([
     element: <LegendaryCars/>
   },
   {
-    path: "/Renovations",
-    element: <Renovations/>
+    path: "/Restorations",
+    element: <Restorations/>
   },
   {
     path: "/About",
