@@ -1,16 +1,27 @@
-@use './Variable' as*;
+@use './Variable' as *;
 
 header {
-  img {
-  height: 3rem;
-}
-h1 {
-  min-height: 5rem;
-  position: relative;
-  text-align: center;
+  display: block;
+  padding: 0;
 
-  
-}}
+  h1 {
+    position: static;
+    width: 100vw;
+    margin: 0;
+    height: 5rem;
+    align-items: center;
+    text-align: center;
+    background-color: $colorDark;
+    color: $colorLight;
+
+    img {
+      position: absolute;
+      left: 0.5rem;
+      top: 0.5rem;
+      height: 4rem;
+    }
+  }
+}
 ul {
   list-style: none;
   padding: 0;
@@ -18,26 +29,26 @@ ul {
 }
 
 a {
-  padding:2cqb;
+  padding: 2cqb;
   text-decoration: none;
   color: $colorLight;
 }
 
 @keyframes garage {
   0% {
-    background-image: url("../assets/fordDealership.png");
+    background-image: url('../assets/fordDealership.png');
     background-size: 70%;
     opacity: 1;
     filter: blur(0);
   }
   50% {
-    background-image: url("../assets/fordT.jpg");
+    background-image: url('../assets/fordT.jpg');
     background-size: 50% auto;
     opacity: 1;
     filter: blur(0);
   }
   100% {
-    background-image: url("../assets/xk120.png");
+    background-image: url('../assets/xk120.png');
     background-size: 50% auto;
     opacity: 1;
     filter: blur(0);
@@ -50,15 +61,21 @@ a {
   background-size: contain;
   background-position: center;
   animation: garage 30s ease-in-out infinite;
-  transition: opacity 1s ease, filter 1s ease;
+  transition:
+    opacity 1s ease,
+    filter 1s ease;
   position: absolute;
   z-index: -1;
 }
 
-section { 
-  left: 20vw
-
+section {
+  display: flex;
+  flex-direction: row;
+  left: 20vw;
   button {
-width: 20%;
-height: 20%;
-}}
+    
+    margin:2rem;
+    width: 20%;
+    height: 20%;
+  }
+}

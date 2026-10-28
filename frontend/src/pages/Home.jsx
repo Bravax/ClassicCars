@@ -5,15 +5,20 @@ function Home() {
   return (
     <main className="garage">
       <header>
-        <img src={logo} alt="Logo" />
-        <h1>Bienvenue</h1>
+        <h1>
+          <img src={logo} alt="Logo" />
+          Bienvenue
+        </h1>
       </header>
-                <section>
-          <button>Les voitures de légendes</button>
-          <button>Evenements</button>
-          <button>Rénovations</button>
-          <button>Contact</button>
-        </section>
+      <section>
+        <button>Les voitures de légendes</button>
+        <button>Evenements</button>
+        <button>Rénovations</button>
+        <button>Contact</button>
+      </section>
+      <footer>
+        
+      </footer>
     </main>
   );
 }
