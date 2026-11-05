@@ -8,7 +8,8 @@ header {
     position: static;
     width: 100vw;
     margin: 0;
-    height: 5rem;
+    height: 10rem;
+    font-size: 6rem;
     align-items: center;
     text-align: center;
     background-color: $colorDark;
@@ -16,9 +17,9 @@ header {
 
     img {
       position: absolute;
-      left: 0.5rem;
-      top: 0.5rem;
-      height: 4rem;
+      left: 1rem;
+      top: 1rem;
+      height: 8rem;
     }
   }
 }
@@ -32,6 +33,12 @@ a {
   padding: 2cqb;
   text-decoration: none;
   color: $colorLight;
+}
+
+footer {
+  height: 10rem;
+   background-color: $colorDark;
+   color: $colorLight;
 }
 
 @keyframes garage {

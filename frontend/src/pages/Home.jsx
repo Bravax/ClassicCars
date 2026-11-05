@@ -2,6 +2,7 @@ import '../styles/Home.scss';
 import logo from '../assets/logoTD.png';
 
 function Home() {
+  const annee = new Date() .getFullYear()
   return (
     <main className="garage">
       <header>
@@ -17,7 +18,9 @@ function Home() {
         <button>Contact</button>
       </section>
       <footer>
-        
+        <p>&copy {annee} Auto Classique Thierry D</p>
+        <a href="#">Mentions légales</a>
+        <a href="#">Contact</a>
       </footer>
     </main>
   );
